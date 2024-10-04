@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+ *{
+  margin: 0;
+  padding: 0;
+  font-family: 'Lato','sans-serif';
+ }
+    .sideBar{
+    padding: 15px;
+    background-color:#F5F3EF;
+    max-width:100%;
+    height: 100%;
+    display: none;
+    transition:  .10s ease;
+    transform: translateY();
+  }
+  .sideBar li a{
+    color: #CCA9A9;
+    font-size: 18px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .sideBar ul {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    list-style: none;
+  }
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 1rem;
+    color:var(--light-txt);
+}
+.navbar{
+  font-size:28px;
+    font-weight: 600;
+    color:black;
+    display: block;
+}
+
+.find{
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    width: 10%;
+    /* height: 30px; */
+    background: #F5F5F5;
+    letter-spacing: 2px;
+    border: none;
+    padding: .75rem;
+    border-radius: 29px;
+    color: var(--light-txt);
+}
+.active{
+  display: block;
+}
+#cross{
+  display: none;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="links">
+            <div class="navbar" id="bar">
+              <i class="fa-solid fa-bars"  id="menu_bar" ></i>
+              <i class="fa-solid fa-xmark"  class="close-cross hide" id="cross"></i>
+            </div>
+        <div class="img">
+            <img src="img/logo.png" alt="" class="logo">
+        </div>
+
+            <div class="find">
+                <img src="img/icons8_search 1.png" alt="">
+            <span>Search</span>
+            </div>
+            <div class="nav-icons">
+                <img src="img/icons8_customer 1.png" alt="">
+                <img src="img/icons8_shopping_bag_1 1.png" alt="">
+            </div>
+
+        </nav>
+    </header>
+    <div class="sideBar">
+        
+        <ul>
+         <li> <a href="">SHOP</a> </li>
+         <li> <a href="">ABOUT</a> </li>
+         <li> <a href="">EDUCATION</a> </li>
+         <li> <a href="">EVENTS</a> </li>
+  
+        </ul>
+      </div>
+
+      <script>
+         let navBar=document.getElementById('bar')
+         let close_cross = document.getElementById('cross')
+         let mobileNAv = document.querySelector('.sideBar')
+         
+        navBar.addEventListener('click',()=>{
+          mobileNAv.classList.toggle('active')
+          if(mobileNAv.classList.contains("active")){
+            close_cross.style.display = "block"
+            document.getElementById('menu_bar').style.display = "none"
+          }else{
+            close_cross.style.display = "none"
+            document.getElementById('menu_bar').style.display = "block"
+          }
+        })
+      </script>
+</body>
+</html>
